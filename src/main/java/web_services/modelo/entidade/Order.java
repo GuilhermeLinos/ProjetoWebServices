@@ -36,7 +36,7 @@ public class Order implements Entidade {
 	private User client;
 
 	@OneToMany
-	private List<OrderItem> items = new ArrayList<>();
+	private List<OrderItem> itens = new ArrayList<>();
 	
 	@OneToOne
 	private Payment payment;
@@ -53,7 +53,7 @@ public class Order implements Entidade {
 	
 	public Double getTotal() {
 		double sum = 0.0;
-		for (OrderItem x : items) {
+		for (OrderItem x : itens) {
 			sum += x.getSubTotal();
 		}
 		return sum;

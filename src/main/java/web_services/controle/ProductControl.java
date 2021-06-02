@@ -15,15 +15,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import web_services.modelo.entidade.Category;
-import web_services.modelo.entidade.Order;
 import web_services.modelo.entidade.Product;
-import web_services.modelo.entidade.User;
 import web_services.modelo.servico.ProductService;
 import web_services.modelo.servico.Service;
 
-/*@RestController
+@RestController
 @RequestMapping("/web_serv")
-public class ProductControl {
+public class ProductControl extends CRUD_Control<Product>{
 	
 	@Autowired
 	ProductService servico;
@@ -38,54 +36,31 @@ public class ProductControl {
 	public Category cadastrarCategoria(@PathVariable int idProduct, @RequestBody Category categoria) throws Throwable{
 		return servico.cadastrarCategoria(idProduct, categoria);
 	}
-	
-	@PutMapping("/{idProduct}/categorias/{idCategory}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-	public Category atualizarCategoria() {}
-	
-	@GetMapping("/{idProduct}/categorias/{idCategory}")
-    @ResponseStatus(HttpStatus.OK)
-	public Category recuperarCategoria() {}
-	
-    @GetMapping("/{idCategory}/categorias/")
-    @ResponseStatus(HttpStatus.OK)
-	public List<Category> listarCategoria() {}
-    
-    @DeleteMapping("/{idCategory}/categorias/{idCategory}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-	public Category excluirCategoria() {}
-	
-	
-	/*@PostMapping("/{idUser}/pedidos")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Order cadastrarPedido(@PathVariable int idUser, @RequestBody Order pedido) throws Throwable{
-		return servico.cadastrarPedido(idUser, pedido);
-	}
 
-    @PutMapping("/{idUser}/pedidos/{idPedido}")
+    @PutMapping("/{idProduct}/categorias/{idCategory}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void atualizarPedido(@PathVariable int idUser, @PathVariable int idPedido, @RequestBody Order pedido) throws Throwable {
-        pedido.setId(idPedido);
-        servico.atualizarPedido(idUser, pedido );
+    public void atualizarCategoria(@PathVariable int idProduct, @PathVariable int idCategory, @RequestBody Category categoria) throws Throwable {
+        categoria.setId(idCategory);
+        servico.atualizarCategoria(idProduct, categoria );
     }
 
-    @GetMapping("/{idUser}/pedidos/{idPedido}")
+    @GetMapping("/{idProduct}/categorias/{idCategory}")
     @ResponseStatus(HttpStatus.OK)
-    public Order recuperarPedido(@PathVariable int idUser, @PathVariable int idPedido) throws Throwable {
-        return servico.recuperarPedido(idUser, idPedido);
+    public Category recuperarCategoria(@PathVariable int idProduct, @PathVariable int idCategory) throws Throwable {
+        return servico.recuperarCategoria(idProduct, idCategory);
     }
 
     
-    @GetMapping("/{idUser}/pedidos/")
+    @GetMapping("/{idProduct}/categorias/")
     @ResponseStatus(HttpStatus.OK)
-    public List<Order> listarPedido(@PathVariable int idUser) throws Throwable {
-        return servico.listarPedido(idUser);
+    public List<Category> listarCategoria(@PathVariable int idProduct) throws Throwable {
+        return servico.listarCategoria(idProduct);
     }
     
-    @DeleteMapping("/{idUser}/pedidos/{idPedido}")
+    @DeleteMapping("/{idProduct}/categorias/{idCategory}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void cancelarPedido(@PathVariable int idUser, @PathVariable int idPedido) throws Throwable {
-        servico.cancelarPedido(idUser, idPedido);
-    }*/
+    public void excluirCategoria(@PathVariable int idProduct, @PathVariable int idCategory) throws Throwable {
+        servico.excluirCategoria(idProduct, idCategory);
+    }
 	
 }

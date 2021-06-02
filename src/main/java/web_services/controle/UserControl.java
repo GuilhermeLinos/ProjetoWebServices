@@ -68,8 +68,10 @@ public class UserControl extends CRUD_Control<User>{
         userServico.cancelarPedido(idUser, idPedido);
     }
     
+    
+    @GetMapping("/{idUser}/pedidos/{idPedido}/pagamento")
     public void recuperarPagamento(@PathVariable int idUser, @PathVariable int idPedido) throws Throwable{
-    	pedidoServico.recuperarPagamento(idUser, idPedido);
+    	pedidoServico.recuperarPagamento(idPedido);
     }
 	
 }

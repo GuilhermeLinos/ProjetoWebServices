@@ -28,7 +28,7 @@ public class UserService extends Service <User>{
 	
 	public Order cadastrarPedido (int idUser, Order pedido) throws Throwable {
 		User usuario = this.recuperar(idUser);
-		pedido.setId(0);
+		pedido.getId();
 		Order pedidoBanco = orderRepository.save(pedido);
 		usuario.getOrders().add(pedidoBanco);
 		userRepository.save(usuario);

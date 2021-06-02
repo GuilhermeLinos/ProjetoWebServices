@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: web_services
+Bundle-SymbolicName: web_services
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-15
+Automatic-Module-Name: web.services
+Export-Package: web_services,
+ web_services.controle,
+ web_services.excecoes,
+ web_services.modelo.entidade,
+ web_services.modelo.entidade.enums,
+ web_services.modelo.entidade.pk,
+ web_services.modelo.repositorios,
+ web_services.modelo.rn,
+ web_services.modelo.servico
